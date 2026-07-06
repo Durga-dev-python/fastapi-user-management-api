@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.routes import router
 
-app = FastAPI()
+app = FastAPI(title="User Management API")
 
-@app.get("/")
-def home():
-    return {"message": "FastAPI is running"}
+app.include_router(router)
